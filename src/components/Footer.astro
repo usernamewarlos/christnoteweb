@@ -1,0 +1,130 @@
+---
+import Icon from './Icon.astro';
+const year = new Date().getFullYear();
+---
+<footer class="site-footer">
+  <div class="container">
+    <div class="footer-grid">
+      <div class="footer-brand">
+        <a class="brand-mark" href="#top">
+          <img class="brand-icon" src="/app-icon.png" alt="" width="32" height="32" />
+          <span class="brand-name">Christ Note</span>
+        </a>
+        <p class="footer-tagline">An iPhone companion for the homily — built quietly, for the faithful.</p>
+      </div>
+      <div class="footer-col">
+        <h4>Product</h4>
+        <ul>
+          <li><a class="footer-link" href="#features">Features</a></li>
+          <li><a class="footer-link" href="#faq">FAQ</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Legal</h4>
+        <ul>
+          <li><a class="footer-link" href="/privacy">Privacy</a></li>
+          <li><a class="footer-link" href="/terms">Terms</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Contact</h4>
+        <ul>
+          <li><a class="footer-link" href="mailto:hello@christnote.app">hello@christnote.app</a></li>
+          <li><a class="footer-link" href="/press">Press</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span>© {year} Christ Note · Made with reverence</span>
+      <Icon name="cross" size={18} class="footer-cross" />
+    </div>
+  </div>
+</footer>
+
+<style>
+.site-footer {
+  background: var(--ink-900);
+  color: var(--parchment-200);
+  padding: var(--s-20) 0 var(--s-8);
+}
+.footer-grid {
+  display: grid;
+  grid-template-columns: 1.4fr 1fr 1fr 1fr;
+  gap: var(--s-12);
+  margin-bottom: var(--s-16);
+}
+.brand-mark {
+  display: flex;
+  align-items: center;
+  gap: var(--s-3);
+  text-decoration: none;
+  margin-bottom: var(--s-4);
+}
+.brand-icon {
+  width: 32px;
+  height: 32px;
+  border-radius: 8px;
+  background: var(--parchment-50);
+  padding: 2px;
+  box-shadow: var(--shadow-1);
+}
+.brand-name {
+  font-family: var(--font-display);
+  font-size: 22px;
+  font-weight: 600;
+  color: var(--parchment-50);
+  letter-spacing: var(--tracking-display);
+}
+.footer-tagline {
+  font-family: var(--font-ui);
+  font-size: var(--fs-body-sm);
+  color: var(--ink-300);
+  max-width: 28ch;
+  line-height: var(--lh-body);
+}
+.footer-col h4 {
+  font-family: var(--font-ui);
+  font-size: 12px;
+  font-weight: 600;
+  letter-spacing: var(--tracking-eyebrow);
+  text-transform: uppercase;
+  color: var(--brass-400);
+  margin-bottom: var(--s-5);
+}
+.footer-col ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: var(--s-3);
+}
+.footer-link {
+  font-family: var(--font-ui);
+  font-size: 14px;
+  color: var(--parchment-200);
+  transition: color var(--dur-fast) var(--ease-out);
+}
+.footer-link:hover { color: var(--brass-300); }
+.footer-bottom {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding-top: var(--s-6);
+  border-top: 1px solid rgba(255,255,255,0.06);
+  font-family: var(--font-ui);
+  font-size: 13px;
+  color: var(--ink-300);
+}
+.footer-cross {
+  color: var(--brass-400);
+}
+
+@media (max-width: 960px) {
+  .footer-grid { grid-template-columns: 1fr 1fr; gap: var(--s-10); }
+}
+@media (max-width: 540px) {
+  .footer-grid { grid-template-columns: 1fr; }
+  .footer-bottom { flex-direction: column; gap: var(--s-3); align-items: flex-start; }
+}
+</style>

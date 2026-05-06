@@ -1,0 +1,87 @@
+---
+---
+<nav class="site-nav" id="siteNav">
+  <div class="container">
+    <a class="brand-mark" href="#top" aria-label="Christ Note home">
+      <img class="brand-icon" src="/app-icon.png" alt="" width="32" height="32" />
+      <span class="brand-name">Christ Note</span>
+    </a>
+    <div class="nav-links">
+      <a class="nav-link" href="#features">Features</a>
+      <a class="nav-link" href="#faq">FAQ</a>
+    </div>
+    <a class="btn btn-primary btn-sm nav-cta" href="#top">Join waitlist</a>
+  </div>
+</nav>
+
+<script>
+  const nav = document.getElementById('siteNav');
+  if (nav) {
+    const onScroll = () => nav.classList.toggle('scrolled', window.scrollY > 80);
+    window.addEventListener('scroll', onScroll, { passive: true });
+    onScroll();
+  }
+</script>
+
+<style>
+.site-nav {
+  position: sticky;
+  top: 0;
+  z-index: 50;
+  height: 72px;
+  display: flex;
+  align-items: center;
+  background: transparent;
+  transition: background var(--dur-base) var(--ease-out),
+              box-shadow var(--dur-base) var(--ease-out);
+}
+.site-nav.scrolled {
+  background: var(--parchment-50);
+  box-shadow: var(--shadow-1);
+}
+.site-nav .container {
+  display: grid;
+  grid-template-columns: 1fr auto 1fr;
+  align-items: center;
+  width: 100%;
+}
+.brand-mark {
+  display: flex;
+  align-items: center;
+  gap: var(--s-3);
+  text-decoration: none;
+  justify-self: start;
+}
+.brand-icon {
+  width: 32px;
+  height: 32px;
+  border-radius: 8px;
+  box-shadow: var(--shadow-1);
+}
+.brand-name {
+  font-family: var(--font-display);
+  font-size: 22px;
+  font-weight: 600;
+  color: var(--ink-900);
+  letter-spacing: var(--tracking-display);
+}
+.nav-links {
+  display: flex;
+  align-items: center;
+  gap: var(--s-8);
+  justify-self: center;
+}
+.nav-link {
+  font-family: var(--font-ui);
+  font-size: 15px;
+  font-weight: 500;
+  color: var(--ink-700);
+}
+.nav-link:hover { color: var(--brass-600); }
+.nav-cta { justify-self: end; }
+
+@media (max-width: 768px) {
+  .nav-links { display: none; }
+  .site-nav .container { grid-template-columns: 1fr auto; }
+}
+</style>

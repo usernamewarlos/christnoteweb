@@ -1,0 +1,113 @@
+/* =========================================================
+   CHRIST NOTE — Web Tokens
+   Adapted from the iOS Lectionary system for browser use:
+   - Sans-serif body for readability at desktop sizes
+   - Lighter density (more whitespace, larger type scale)
+   - Responsive sizing with clamp()
+   - Same brand palette
+   ========================================================= */
+
+:root {
+  /* ---------- Color ---------- */
+  --parchment-50:  #FBF7EF;
+  --parchment-100: #F4ECDC;
+  --parchment-200: #E8DCC1;
+  --parchment-300: #D8C7A1;
+
+  --ink-900: #1F1612;
+  --ink-800: #2A1F18;
+  --ink-700: #3F2E22;
+  --ink-600: #5A463A;
+  --ink-500: #7D6755;
+  --ink-400: #9D8775;
+  --ink-300: #BBA593;
+
+  --brass-100: #F1E3C8;
+  --brass-200: #E5CFA1;
+  --brass-300: #D2B175;
+  --brass-400: #BF974F;
+  --brass-500: #A87C3D;
+  --brass-600: #8B6530;
+  --brass-700: #6E4F25;
+
+  --oxblood-700: #5A201D;
+  --oxblood-600: #7A2E2A;
+  --oxblood-500: #9A4640;
+
+  --color-bg:           var(--parchment-50);
+  --color-surface:      #FFFFFF;
+  --color-surface-2:    var(--parchment-100);
+  --color-text:         var(--ink-800);
+  --color-text-soft:    var(--ink-500);
+  --color-heading:      var(--ink-900);
+  --color-accent:       var(--brass-500);
+  --color-accent-hover: var(--brass-600);
+  --color-divider:      var(--parchment-200);
+  --color-link:         var(--brass-600);
+
+  /* ---------- Type ---------- */
+  --font-display: "Cormorant Garamond", "Source Serif 4", Georgia, serif;
+  --font-body:    "Inter", -apple-system, BlinkMacSystemFont, "SF Pro Text", system-ui, sans-serif;
+  --font-ui:      var(--font-body);
+
+  --fs-display-1: clamp(48px, 7vw, 96px);
+  --fs-display-2: clamp(36px, 5vw, 64px);
+  --fs-display-3: clamp(28px, 3.5vw, 44px);
+  --fs-h1: clamp(28px, 3.2vw, 40px);
+  --fs-h2: clamp(22px, 2.4vw, 30px);
+  --fs-h3: 20px;
+  --fs-eyebrow: 12px;
+  --fs-body-lg: clamp(17px, 1.4vw, 19px);
+  --fs-body:    16px;
+  --fs-body-sm: 14px;
+  --fs-caption: 13px;
+
+  --lh-tight: 1.05;
+  --lh-snug:  1.2;
+  --lh-body:  1.55;
+  --lh-loose: 1.7;
+
+  --tracking-tight:   -0.02em;
+  --tracking-display: -0.01em;
+  --tracking-eyebrow:  0.16em;
+
+  /* ---------- Spacing ---------- */
+  --s-1:  4px;
+  --s-2:  8px;
+  --s-3:  12px;
+  --s-4:  16px;
+  --s-5:  20px;
+  --s-6:  24px;
+  --s-8:  32px;
+  --s-10: 40px;
+  --s-12: 48px;
+  --s-16: 64px;
+  --s-20: 80px;
+  --s-24: 96px;
+  --s-32: 128px;
+
+  --container-max:      1200px;
+  --container-text-max: 680px;
+  --gutter:             clamp(20px, 4vw, 48px);
+  --section-y:          clamp(72px, 10vw, 144px);
+
+  /* ---------- Radius ---------- */
+  --r-xs: 6px;
+  --r-sm: 10px;
+  --r-md: 14px;
+  --r-lg: 20px;
+  --r-xl: 28px;
+  --r-pill: 999px;
+
+  /* ---------- Shadow ---------- */
+  --shadow-1: 0 1px 2px rgba(42,31,24,0.06), 0 1px 1px rgba(42,31,24,0.04);
+  --shadow-2: 0 4px 10px rgba(42,31,24,0.06), 0 1px 2px rgba(42,31,24,0.05);
+  --shadow-3: 0 14px 28px rgba(42,31,24,0.10), 0 4px 8px rgba(42,31,24,0.05);
+  --shadow-cta: 0 8px 18px rgba(168,124,61,0.30);
+
+  /* ---------- Motion ---------- */
+  --ease-out: cubic-bezier(0.2, 0.8, 0.2, 1);
+  --dur-fast: 140ms;
+  --dur-base: 220ms;
+  --dur-slow: 380ms;
+}

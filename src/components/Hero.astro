@@ -1,0 +1,70 @@
+---
+import PhoneFrame from './PhoneFrame.astro';
+import WaitlistForm from './WaitlistForm.astro';
+---
+<section class="hero" id="top">
+  <div class="container">
+    <span class="eyebrow hero-eyebrow">Coming soon · iPhone</span>
+    <h1 class="hero-title">Your sermons, <em>remembered.</em></h1>
+    <p class="hero-sub">
+      Record, summarize, and revisit Sunday's sermon — so the Word doesn't fade by Tuesday.
+    </p>
+
+    <WaitlistForm id="hero" />
+
+    <div class="hero-phone">
+      <PhoneFrame
+        src="/screens/library.png"
+        alt="Christ Note Library — recent sermons"
+      />
+    </div>
+  </div>
+</section>
+
+<style>
+.hero {
+  padding: var(--s-16) 0 var(--s-20);
+  background: var(--parchment-50);
+  text-align: center;
+}
+.hero-eyebrow {
+  display: block;
+  margin-bottom: var(--s-5);
+}
+.hero-title {
+  font-family: var(--font-display);
+  font-size: var(--fs-display-1);
+  font-weight: 500;
+  line-height: var(--lh-tight);
+  letter-spacing: var(--tracking-tight);
+  color: var(--ink-900);
+  max-width: 14ch;
+  margin: 0 auto var(--s-6);
+}
+.hero-title em {
+  font-style: italic;
+  color: var(--brass-500);
+}
+.hero-sub {
+  font-family: "Cormorant Garamond", Georgia, serif;
+  font-size: clamp(18px, 1.6vw, 21px);
+  font-style: italic;
+  color: var(--ink-600);
+  max-width: 52ch;
+  margin: 0 auto var(--s-8);
+  line-height: 1.55;
+}
+.hero-phone {
+  display: flex;
+  justify-content: center;
+  margin-top: var(--s-16);
+  animation: float 6s var(--ease-out) infinite;
+}
+@keyframes float {
+  0%, 100% { transform: translateY(-6px); }
+  50%      { transform: translateY(6px); }
+}
+@media (prefers-reduced-motion: reduce) {
+  .hero-phone { animation: none; }
+}
+</style>

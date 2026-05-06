@@ -1,0 +1,77 @@
+---
+import Layout from '../layouts/Layout.astro';
+import Nav from '../components/Nav.astro';
+import Hero from '../components/Hero.astro';
+import FeatureColumn from '../components/FeatureColumn.astro';
+import FAQ from '../components/FAQ.astro';
+import Footer from '../components/Footer.astro';
+
+export const prerender = true;
+---
+<Layout>
+  <Nav />
+  <Hero />
+
+  <section class="features" id="features">
+    <div class="container">
+      <div class="features-head">
+        <span class="eyebrow">What it does</span>
+        <h2>Three quiet ways in.</h2>
+        <p>Capture the homily live, bring one with you, or hear it again — all in the same library.</p>
+      </div>
+      <div class="feature-grid">
+        <FeatureColumn icon="mic" title="Record live.">
+          Tap once during the homily. Christ Note captures crisp audio and transcribes it as the priest speaks.
+        </FeatureColumn>
+        <FeatureColumn icon="cloud-upload" title="Bring it.">
+          Paste a YouTube link. Photograph a bulletin. Christ Note understands all of them.
+        </FeatureColumn>
+        <FeatureColumn icon="sparkle" title="Hear it again.">
+          AI surfaces scripture references, key themes, and quotable lines — so you can return to the Word all week.
+        </FeatureColumn>
+      </div>
+    </div>
+  </section>
+
+  <FAQ />
+  <Footer />
+</Layout>
+
+<style>
+.features {
+  padding: var(--section-y) 0;
+  text-align: center;
+}
+.features-head {
+  margin-bottom: var(--s-16);
+}
+.features-head .eyebrow {
+  display: block;
+  margin-bottom: var(--s-4);
+}
+.features-head h2 {
+  font-family: var(--font-display);
+  font-size: var(--fs-display-2);
+  font-weight: 500;
+  max-width: 22ch;
+  margin: 0 auto var(--s-4);
+}
+.features-head p {
+  font-family: "Cormorant Garamond", Georgia, serif;
+  font-size: var(--fs-body-lg);
+  font-style: italic;
+  color: var(--ink-600);
+  max-width: 56ch;
+  margin: 0 auto;
+}
+.feature-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: var(--s-12);
+  max-width: 1000px;
+  margin: 0 auto;
+}
+@media (max-width: 960px) {
+  .feature-grid { grid-template-columns: 1fr; gap: var(--s-10); }
+}
+</style>

@@ -1,0 +1,96 @@
+---
+interface Props {
+  id: string;
+  helper?: string;
+}
+const { id, helper = "No spam. We'll write once when the app is ready." } = Astro.props;
+const inputId = `${id}-email`;
+const helperId = `${id}-helper`;
+---
+<form class="waitlist-form" id={id} novalidate>
+  <label class="visually-hidden" for={inputId}>Email address</label>
+  <div class="email-row">
+    <input id={inputId} name="email" type="email" placeholder="you@parish.org" required aria-describedby={helperId} autocomplete="email" />
+    <button class="btn btn-primary" type="submit">
+      <span class="label">Join the waitlist</span>
+      <svg width="16" height="16" aria-hidden="true"><use href="#icon-arrow-right" /></svg>
+    </button>
+  </div>
+  <p class="helper" id={helperId}>{helper}</p>
+  <p class="status" role="status" aria-live="polite"></p>
+</form>
+
+<script>
+  document.querySelectorAll<HTMLFormElement>('form.waitlist-form').forEach((form) => {
+    const input = form.querySelector<HTMLInputElement>('input[type=email]');
+    const button = form.querySelector<HTMLButtonElement>('button[type=submit]');
+    const status = form.querySelector<HTMLParagraphElement>('.status');
+    const label = form.querySelector<HTMLSpanElement>('.label');
+
+    form.addEventListener('submit', async (e) => {
+      e.preventDefault();
+      if (!input || !button || !status || !label) return;
+
+      const email = input.value.trim();
+      if (!email || !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) {
+        status.textContent = 'Please enter a valid email.';
+        status.dataset.tone = 'err';
+        return;
+      }
+
+      button.disabled = true;
+      const originalLabel = label.textContent ?? 'Join the waitlist';
+      label.textContent = 'Sending…';
+
+      try {
+        const res = await fetch('/api/waitlist', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({ email }),
+        });
+
+        if (res.ok) {
+          input.value = '';
+          input.placeholder = "Thank you. We'll be in touch.";
+          status.textContent = "You're on the list. We'll write when the doors open.";
+          status.dataset.tone = 'ok';
+          label.textContent = 'Joined ✓';
+        } else {
+          const body = await res.json().catch(() => ({}));
+          status.textContent = body?.error ?? 'Something went wrong. Try again.';
+          status.dataset.tone = 'err';
+          label.textContent = originalLabel;
+          button.disabled = false;
+        }
+      } catch {
+        status.textContent = 'Network error. Try again.';
+        status.dataset.tone = 'err';
+        label.textContent = originalLabel;
+        button.disabled = false;
+      }
+    });
+  });
+</script>
+
+<style>
+.waitlist-form {
+  max-width: 460px;
+  margin: 0 auto;
+}
+.helper {
+  font-family: var(--font-ui);
+  font-size: 13px;
+  color: var(--ink-500);
+  text-align: center;
+  margin-top: var(--s-3);
+}
+.status {
+  font-family: var(--font-ui);
+  font-size: 13px;
+  text-align: center;
+  margin-top: var(--s-3);
+  min-height: 1.2em;
+}
+.status[data-tone="ok"] { color: var(--brass-600); }
+.status[data-tone="err"] { color: var(--oxblood-600); }
+</style>
