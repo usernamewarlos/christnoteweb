@@ -6,23 +6,23 @@ import FAQItem from './FAQItem.astro';
     <div class="faq-head">
       <span class="eyebrow">Frequently asked</span>
       <h2>Christ Note FAQ.</h2>
-      <p class="faq-lede">Everything you need to know about carrying the homily home.</p>
+      <p class="faq-lede">Everything you need to know — capture, AI summary, Bible study, and pricing.</p>
     </div>
     <div class="faq-list">
       <FAQItem question="What is Christ Note?">
-        Christ Note is an iPhone companion for the homily. Record live during Mass, paste a parish livestream link, or photograph your notes — an AI summary surfaces scripture references, themes, and key quotes. Past sermons live in a personal library, sorted by week and season.
+        An iPhone companion for sermons and Scripture. Capture a homily three ways — record it live, paste a YouTube link, or photograph your notes — and Christ Note delivers an AI summary with scripture references, themes, and quotable lines. The full 66-book Bible is built in, with on-demand study tools (SOAP, passage analysis, chapter headings) and a shared daily devotional.
       </FAQItem>
       <FAQItem question="How does Christ Note protect my privacy?">
-        Recordings are encrypted in transit and at rest. Audio is processed for transcription and immediately discarded — only the text remains. We never sell or share your data, and your library is yours alone.
+        Transcription runs on-device with Whisper — we never receive your raw audio, only the transcript when you ask for a summary. Bible verses are served from a verified text cache so quotes are never hallucinated. Your library syncs to private, encrypted storage tied to your account, and we never sell or share your data.
       </FAQItem>
       <FAQItem question="Can I use Christ Note offline?">
-        Recording works offline — Christ Note captures audio on-device whether you have signal or not. Transcription and AI summaries need a connection, but they sync automatically the next time you're online.
+        Yes for capture and reading. Recording, photo OCR, and the entire 66-book Bible all work without a connection. AI summaries, the daily devotional, and "chat with this sermon" need the internet — they sync the next time you're online.
       </FAQItem>
       <FAQItem question="Is Christ Note free?">
-        A free tier covers a few sermons per month. A premium tier unlocks unlimited recordings, deeper AI summaries, and unlimited library storage.
+        The free tier lets you try one AI sermon summary, plus a few Bible study tools (SOAP, passage analysis, unlimited chapter headings) — enough to feel how it works. <strong>Christ Note Pro</strong> unlocks unlimited summaries, flashcards, quizzes, sermon chat, and deeper Bible analysis.
       </FAQItem>
       <FAQItem question="Is there an Android app?">
-        Not yet. Christ Note ships on iPhone first, Spring 2026. Android is on the roadmap — join the waitlist and we'll write when it's ready.
+        Not yet. Christ Note is built natively for iPhone (iOS 17+) and uses on-device transcription and Apple Sign-In. Android isn't on the immediate roadmap — join the waitlist and we'll write if that changes.
       </FAQItem>
     </div>
   </div>
@@ -57,5 +57,9 @@ import FAQItem from './FAQItem.astro';
 .faq-list {
   max-width: 760px;
   margin: 0 auto;
+}
+.faq-list :global(.faq-answer strong) {
+  color: var(--ink-900);
+  font-weight: 600;
 }
 </style>
