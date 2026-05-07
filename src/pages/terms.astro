@@ -1,0 +1,280 @@
+---
+import Layout from '../layouts/Layout.astro';
+import Nav from '../components/Nav.astro';
+import Footer from '../components/Footer.astro';
+import '../styles/prose.css';
+
+export const prerender = true;
+
+const lastUpdated = '7 May 2026';
+
+const sections = [
+  { id: 'eligibility',  title: 'Eligibility and accounts' },
+  { id: 'access',       title: 'Access to the service' },
+  { id: 'fees',         title: 'Fees and subscriptions' },
+  { id: 'content',      title: 'User content; rights and responsibilities' },
+  { id: 'recording',    title: 'Recording compliance' },
+  { id: 'privacy-ref',  title: 'Privacy; data use; model training' },
+  { id: 'ai',           title: 'AI outputs; not professional advice' },
+  { id: 'dmca',         title: 'DMCA' },
+  { id: 'updates',      title: 'Updates to these terms' },
+  { id: 'disclaimers',  title: 'Disclaimers' },
+  { id: 'liability',    title: 'Limitation of liability' },
+  { id: 'indemnity',    title: 'Indemnification' },
+  { id: 'arbitration',  title: 'Dispute resolution; arbitration; class waiver' },
+  { id: 'termination',  title: 'Termination; suspension' },
+  { id: 'misc',         title: 'Electronic communications; notices; misc.' },
+];
+---
+<Layout
+  title="Terms of Use — Christ Note"
+  description="The agreement governing your use of the Christ Note iPhone app and christnote.app."
+>
+  <Nav />
+
+  <main class="prose-page">
+    <div class="container">
+      <header class="prose-head">
+        <a class="back-link" href="/">← Back home</a>
+        <span class="eyebrow">Legal</span>
+        <h1>Terms of Use</h1>
+        <p class="last-updated">Last updated: {lastUpdated}</p>
+      </header>
+
+      <article class="prose">
+        <p class="lede">
+          Please read these Terms — they're a legal contract between you and Christ Note. Using the app or website means you agree to them.
+        </p>
+
+        <p>
+          These Terms of Use ("Terms") form a legal agreement between you and <strong>[Legal entity name]</strong> ("Christ Note," "we," "us," or "our") governing your access to and use of the Christ Note iPhone application, the christnote.app website, and any related services that link to these Terms (collectively, the "Service"). By accessing or using the Service, you agree to be bound by these Terms and our <a href="/privacy">Privacy Policy</a>, and you represent that you have the authority to do so. If you do not agree, do not use the Service.
+        </p>
+
+        <div class="callout">
+          <strong>Arbitration & class action waiver notice.</strong> Except for certain disputes described in Section 13, you and Christ Note agree that disputes between you and Christ Note will be resolved by binding, individual arbitration under the AAA Consumer Arbitration Rules. You waive your right to a jury trial and to participate in a class action — unless you opt out of arbitration within 30 days as described in Section 13.6.
+        </div>
+
+        <nav class="toc" aria-label="Sections">
+          <p class="toc-title">Sections</p>
+          <ol>
+            {sections.map((s, i) => (
+              <li><a href={`#${s.id}`}><span class="num">{String(i + 1).padStart(2, '0')}</span>{s.title}</a></li>
+            ))}
+          </ol>
+        </nav>
+
+        <!-- 1 -->
+        <h2 id="eligibility"><span class="num">01</span>Eligibility and accounts</h2>
+
+        <h3>1.1 Age</h3>
+        <p>The Service is not available to users under 13 (or under 16 in the EEA/UK). If you are between 13 and 18 (or the age of majority where you live), you may use the Service only with the consent of a parent or legal guardian who agrees to these Terms on your behalf.</p>
+
+        <h3>1.2 Registration; account security</h3>
+        <p>You must provide accurate information and keep it current. You are responsible for activity under your account and for keeping your authentication methods secure. Notify us immediately at <a href="mailto:hello@christnote.app">hello@christnote.app</a> of any unauthorized use of your account or other security breach. Christ Note is not liable for losses arising from your failure to comply with these requirements.</p>
+
+        <h3>1.3 Identity providers</h3>
+        <p>Sign-in is offered through Apple Sign-In and Google Sign-In via Firebase Authentication. Your use of those identity providers is also subject to their terms and privacy policies.</p>
+
+        <!-- 2 -->
+        <h2 id="access"><span class="num">02</span>Access to the service</h2>
+
+        <h3>2.1 License</h3>
+        <p>Subject to these Terms, Christ Note grants you a non-transferable, non-exclusive, revocable, limited license to use and access the Service for your own personal, non-commercial use.</p>
+
+        <h3>2.2 Restrictions</h3>
+        <p>You shall not: (a) license, sell, rent, lease, transfer, assign, distribute, host, or otherwise commercially exploit the Service; (b) modify, make derivative works of, disassemble, reverse compile, or reverse engineer any part of the Service; (c) access the Service to build a competing product; or (d) copy, reproduce, distribute, republish, download, display, post, or transmit the Service except as expressly permitted. All copyright and other proprietary notices must be retained.</p>
+
+        <h3>2.3 Modification</h3>
+        <p>We may modify, suspend, or discontinue the Service (in whole or in part) at any time, with or without notice. We are not liable to you or any third party for any such change.</p>
+
+        <h3>2.4 No support obligation</h3>
+        <p>We have no obligation to provide support or maintenance for the Service.</p>
+
+        <h3>2.5 Ownership</h3>
+        <p>Excluding User Content (defined in Section 4), all intellectual property rights in the Service — including the Christ Note name, logo, design, software, custom icon set, and the Lectionary visual system — are owned by Christ Note or its licensors. No rights are granted except for the limited license in Section 2.1.</p>
+
+        <!-- 3 -->
+        <h2 id="fees"><span class="num">03</span>Fees and subscriptions</h2>
+
+        <h3>3.1 Christ Note Pro</h3>
+        <p>Certain features are offered on a paid subscription basis under the name <strong>Christ Note Pro</strong>. Unless otherwise stated, subscriptions automatically renew for successive terms of the same length and price then in effect until canceled.</p>
+
+        <h3>3.2 Billing and cancellation</h3>
+        <p>Subscriptions purchased through the Apple App Store are billed and managed by Apple. To cancel, you must do so through the App Store subscription settings on your Apple ID; cancellation takes effect at the end of the then-current billing period. Fees are non-refundable except as required by law or by the App Store's refund policies.</p>
+
+        <h3>3.3 Trials, changes, and taxes</h3>
+        <p>Free trials may convert to paid subscriptions unless canceled before the trial ends. We may change prices on renewal with prior notice. You are responsible for any applicable taxes.</p>
+
+        <h3>3.4 Free tier</h3>
+        <p>The free tier includes limited use of certain AI features (currently: one AI sermon summary, one SOAP study, one passage analysis, and unlimited chapter headings — subject to change). Christ Note Pro unlocks the full set of AI features and unlimited library storage.</p>
+
+        <!-- 4 -->
+        <h2 id="content"><span class="num">04</span>User content; rights and responsibilities</h2>
+
+        <h3>4.1 Definitions</h3>
+        <p>"User Content" means content you upload, record, submit, or otherwise provide through the Service — including audio recordings, transcripts, photos, notes, highlights, chat messages, and any output you generate by combining your input with our AI features.</p>
+
+        <h3>4.2 Ownership</h3>
+        <p>You retain ownership of your User Content. You are solely responsible for it. You assume all risks associated with your User Content, including reliance on its accuracy, completeness, or usefulness.</p>
+
+        <h3>4.3 Limited license to us</h3>
+        <p>You grant Christ Note a worldwide, royalty-free, non-exclusive license to host, store, copy, transmit, display, and process your User Content solely as necessary to operate, secure, and improve the Service for you. This license ends when you delete the User Content or your account, except to the extent retention is required by law or for legitimate business records.</p>
+
+        <h3>4.4 Deletion</h3>
+        <p>You may delete User Content from your account at any time. Deleted content may remain in encrypted backups for a limited period before being purged.</p>
+
+        <h3>4.5 Acceptable use</h3>
+        <p>You agree not to: (a) copy, scrape, reverse engineer, or misuse the Service; (b) upload content you do not have the right to share; (c) use the Service to violate any law or third-party right; (d) attempt to gain unauthorized access to other accounts or systems; (e) interfere with or disrupt the Service; or (f) use the Service to generate or distribute spam, hateful, harassing, fraudulent, or unlawful content.</p>
+
+        <h3>4.6 Feedback</h3>
+        <p>If you provide feedback or suggestions about the Service, you grant Christ Note a perpetual, irrevocable, royalty-free license to use that feedback for any purpose, without compensation or attribution.</p>
+
+        <h3>4.7 Enforcement</h3>
+        <p>We may, but are not obligated to, review, refuse, or remove User Content that violates these Terms or applicable law.</p>
+
+        <!-- 5 -->
+        <h2 id="recording"><span class="num">05</span>Recording compliance</h2>
+        <p>
+          The Service lets you record audio and capture photos. <strong>You are solely responsible for complying with applicable recording, privacy, and consent laws</strong>, which vary by jurisdiction. In particular:
+        </p>
+        <ul>
+          <li>Always obtain permission from your parish, the homilist, and any other identifiable individuals before recording.</li>
+          <li>Use Christ Note for personal, devotional purposes only — not to publish, broadcast, or distribute another person's words without their consent.</li>
+          <li>If you photograph other people's bulletins, notes, or copyrighted material, do so only for personal study; do not redistribute.</li>
+        </ul>
+        <p>
+          Christ Note does not review your recordings and is not responsible for content you capture in violation of these obligations. You agree to indemnify us for any claim arising from your failure to comply with this Section.
+        </p>
+
+        <!-- 6 -->
+        <h2 id="privacy-ref"><span class="num">06</span>Privacy; data use; model training</h2>
+        <p>Our collection and use of personal information are described in our <a href="/privacy">Privacy Policy</a>. Two points worth highlighting here:</p>
+        <ul>
+          <li><strong>On-device transcription.</strong> Audio is transcribed on your iPhone using WhisperKit. Audio is not sent off-device for transcription; only the resulting transcript text is used by AI features.</li>
+          <li><strong>No model training on your content.</strong> We do not use your User Content to train AI models, and our AI sub-processors (currently OpenAI) process your inputs under terms that exclude training by default.</li>
+        </ul>
+
+        <!-- 7 -->
+        <h2 id="ai"><span class="num">07</span>AI outputs; not professional advice</h2>
+
+        <h3>7.1 AI is fallible</h3>
+        <p>AI summaries, chats, flashcards, quizzes, and Bible analyses may be inaccurate, incomplete, or biased. They may misattribute quotes, misinterpret scripture, or omit important context. You are responsible for reviewing outputs, exercising judgment, and applying human discernment before relying on them.</p>
+
+        <h3>7.2 Bible verse text</h3>
+        <p>To reduce hallucinated quotations, Bible verse text is served from a verified server-side cache. The verses themselves are accurate to the source translation; commentary, summary, or interpretation generated around them is AI-produced and may not be.</p>
+
+        <h3>7.3 Not professional advice</h3>
+        <p>Christ Note does not provide theological, pastoral, legal, medical, financial, or other professional advice. <strong>Outputs are devotional aids, not substitutes for the guidance of a priest, minister, spiritual director, or other qualified professional.</strong> Seek qualified advice for spiritual or temporal matters that warrant it.</p>
+
+        <!-- 8 -->
+        <h2 id="dmca"><span class="num">08</span>DMCA</h2>
+
+        <h3>8.1 Notice of infringement</h3>
+        <p>We respect intellectual property rights. If you believe content available through the Service infringes your copyright, send a notice that meets 17 U.S.C. §512(c)(3) to <a href="mailto:hello@christnote.app">hello@christnote.app</a>. The notice should include your physical or electronic signature, identification of the copyrighted work, identification of the allegedly infringing material and its location, your contact information, a statement of good-faith belief, and a statement under penalty of perjury that you are authorized to act on behalf of the copyright owner.</p>
+
+        <h3>8.2 Counter notice</h3>
+        <p>If you believe material was removed by mistake or misidentification, you may submit a counter notice as permitted by the DMCA.</p>
+
+        <h3>8.3 Repeat infringers</h3>
+        <p>We may terminate accounts of repeat infringers in appropriate circumstances.</p>
+
+        <!-- 9 -->
+        <h2 id="updates"><span class="num">09</span>Updates to these terms</h2>
+        <p>We may update these Terms by posting the updated version with a new "Last updated" date. Continued use of the Service after the new effective date constitutes acceptance. Material changes will be highlighted in-app or by email before they take effect.</p>
+
+        <!-- 10 -->
+        <h2 id="disclaimers"><span class="num">10</span>Disclaimers</h2>
+        <div class="allcaps">
+          TO THE FULLEST EXTENT PERMITTED BY LAW, THE SERVICE IS PROVIDED ON AN "AS-IS" AND "AS-AVAILABLE" BASIS, AND CHRIST NOTE (AND ITS SUPPLIERS) EXPRESSLY DISCLAIM ALL WARRANTIES OF ANY KIND, WHETHER EXPRESS, IMPLIED, OR STATUTORY, INCLUDING WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE, TITLE, ACCURACY, AND NON-INFRINGEMENT. WE DO NOT WARRANT THAT THE SERVICE WILL MEET YOUR REQUIREMENTS, BE UNINTERRUPTED, TIMELY, SECURE, OR ERROR-FREE, OR THAT AI OUTPUTS WILL BE ACCURATE, RELIABLE, COMPLETE, OR SAFE.
+        </div>
+        <p>Some jurisdictions do not allow the exclusion of implied warranties; those limitations may not apply to you.</p>
+
+        <!-- 11 -->
+        <h2 id="liability"><span class="num">11</span>Limitation of liability</h2>
+        <div class="allcaps">
+          TO THE MAXIMUM EXTENT PERMITTED BY LAW, IN NO EVENT SHALL CHRIST NOTE NOR ITS AFFILIATES, LICENSORS, OR SUPPLIERS BE LIABLE TO YOU OR ANY THIRD PARTY FOR ANY LOST PROFITS, LOST DATA, COSTS OF SUBSTITUTE PRODUCTS, OR ANY INDIRECT, CONSEQUENTIAL, EXEMPLARY, INCIDENTAL, SPECIAL, OR PUNITIVE DAMAGES ARISING FROM OR RELATED TO THESE TERMS OR YOUR USE OF, OR INABILITY TO USE, THE SERVICE.
+        </div>
+        <div class="allcaps">
+          OUR TOTAL LIABILITY TO YOU FOR ANY DAMAGES ARISING FROM OR RELATED TO THESE TERMS WILL NOT EXCEED THE GREATER OF (A) THE AMOUNTS YOU PAID TO CHRIST NOTE IN THE 12 MONTHS BEFORE THE EVENT GIVING RISE TO LIABILITY, OR (B) US$100. THE EXISTENCE OF MORE THAN ONE CLAIM WILL NOT ENLARGE THIS LIMIT.
+        </div>
+        <p>Some jurisdictions do not allow the limitation of incidental or consequential damages; those limits may not apply to you.</p>
+
+        <!-- 12 -->
+        <h2 id="indemnity"><span class="num">12</span>Indemnification</h2>
+        <p>
+          You agree to defend, indemnify, and hold harmless Christ Note and its affiliates, officers, employees, and agents from and against any claims, damages, costs, and expenses (including reasonable attorneys' fees) arising out of or related to your User Content, your use of the Service, or your violation of these Terms or applicable law (including, without limitation, your obligations under Sections 4.5 and 5).
+        </p>
+
+        <!-- 13 -->
+        <h2 id="arbitration"><span class="num">13</span>Dispute resolution; arbitration; class waiver</h2>
+
+        <h3>13.1 Informal resolution</h3>
+        <p>Before filing a claim, you and Christ Note agree to try to resolve the dispute informally. Send a written notice — including your name, contact information, a description of the dispute, and the relief sought — to <a href="mailto:hello@christnote.app">hello@christnote.app</a>. If we cannot resolve the dispute within 60 days, either party may start arbitration.</p>
+
+        <h3>13.2 Binding arbitration</h3>
+        <p>You and Christ Note agree to resolve any claims arising out of or relating to these Terms or the Service by binding individual arbitration administered by the American Arbitration Association (AAA) under its Consumer Arbitration Rules then in effect, except as provided in Section 13.3. The Federal Arbitration Act governs this agreement to arbitrate.</p>
+
+        <h3>13.3 Exceptions</h3>
+        <p>Either party may (a) bring an individual claim in small claims court with jurisdiction; and (b) seek temporary or preliminary equitable relief in court to protect intellectual property rights or prevent unauthorized access to or use of the Service, pending final determination by the arbitrator.</p>
+
+        <h3>13.4 Procedures</h3>
+        <p>Arbitration may be conducted by phone, video, or written submissions; if an in-person hearing is required, it will occur in the county where you live, unless we agree otherwise. The AAA Rules are available at <a href="https://www.adr.org" target="_blank" rel="noopener">www.adr.org</a>.</p>
+
+        <h3>13.5 Class action waiver</h3>
+        <div class="allcaps">
+          YOU AND CHRIST NOTE AGREE THAT EACH MAY BRING CLAIMS ONLY IN YOUR OR ITS INDIVIDUAL CAPACITY, AND NOT AS A PLAINTIFF OR CLASS MEMBER IN ANY PURPORTED CLASS OR REPRESENTATIVE PROCEEDING. THE ARBITRATOR MAY NOT CONSOLIDATE MORE THAN ONE PERSON'S CLAIMS.
+        </div>
+
+        <h3>13.6 Opt out</h3>
+        <p>You may opt out of this Arbitration Agreement within 30 days of first accepting these Terms by sending a written opt-out notice to <a href="mailto:hello@christnote.app">hello@christnote.app</a> with the subject line "Arbitration Opt-Out." Your notice must include your name, the email address associated with your account, and a statement that you want to opt out of arbitration.</p>
+
+        <h3>13.7 Severability; survival</h3>
+        <p>If any portion of this Section 13 is found unenforceable, the unenforceable portion will be severed and the remainder will remain in effect. This Section 13 survives termination.</p>
+
+        <!-- 14 -->
+        <h2 id="termination"><span class="num">14</span>Termination; suspension</h2>
+        <p>
+          We may suspend or terminate your access to the Service (in whole or in part) at any time, with or without notice, for any reason — including if we believe you have violated these Terms or applicable law, or to protect the Service or other users. You may stop using the Service at any time. Termination may involve deletion of your User Content from our live databases. Sections that by their nature should survive termination will survive (including Sections 2.5, 4.6, 5, 7, 10–13, and 15).
+        </p>
+
+        <!-- 15 -->
+        <h2 id="misc"><span class="num">15</span>Electronic communications; notices; misc.</h2>
+
+        <h3>15.1 Electronic communications</h3>
+        <p>You consent to receive communications from us electronically — including email, in-product messages, and push notifications. Such communications satisfy any legal requirement for written communications.</p>
+
+        <h3>15.2 Notices</h3>
+        <p>For support or general notices, contact <a href="mailto:hello@christnote.app">hello@christnote.app</a>. For legal disputes and arbitration notices, contact <a href="mailto:hello@christnote.app">hello@christnote.app</a>. DMCA notices should be sent to the same address.</p>
+
+        <h3>15.3 Export controls</h3>
+        <p>You may not use or access the Service in violation of U.S. export control or sanctions laws.</p>
+
+        <h3>15.4 Assignment</h3>
+        <p>You may not assign these Terms without our prior written consent. We may freely assign these Terms without notice.</p>
+
+        <h3>15.5 Governing law; venue</h3>
+        <p>These Terms are governed by the laws of the State of <strong>[State]</strong>, excluding its conflict-of-laws rules, and applicable U.S. federal law. Except for small claims and equitable relief permitted in Section 13.3, the state and federal courts located in <strong>[County, State]</strong> have exclusive jurisdiction.</p>
+
+        <h3>15.6 Severability; waiver</h3>
+        <p>If any provision of these Terms is found unenforceable, that provision will be enforced to the maximum extent permissible and the remaining provisions will remain in full force. Our failure to enforce any right is not a waiver.</p>
+
+        <h3>15.7 Force majeure</h3>
+        <p>We are not liable for delays or failures due to events beyond our reasonable control.</p>
+
+        <h3>15.8 Entire agreement</h3>
+        <p>These Terms, together with our <a href="/privacy">Privacy Policy</a>, constitute the entire agreement between you and Christ Note regarding the Service and supersede prior or contemporaneous agreements on the subject.</p>
+
+        <h3>15.9 No third-party beneficiaries</h3>
+        <p>There are no third-party beneficiaries to these Terms.</p>
+
+        <h3>15.10 Contact</h3>
+        <p>
+          <strong>[Legal entity name]</strong><br />
+          <a href="mailto:hello@christnote.app">hello@christnote.app</a>
+        </p>
+      </article>
+    </div>
+  </main>
+
+  <Footer />
+</Layout>
