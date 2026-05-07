@@ -4,24 +4,25 @@ import FAQItem from './FAQItem.astro';
 <section class="faq" id="faq">
   <div class="container">
     <div class="faq-head">
-      <span class="eyebrow">Questions</span>
-      <h2>Common questions.</h2>
+      <span class="eyebrow">Frequently asked</span>
+      <h2>Christ Note FAQ.</h2>
+      <p class="faq-lede">Everything you need to know about carrying the homily home.</p>
     </div>
     <div class="faq-list">
-      <FAQItem question="When does Christ Note launch?">
-        Spring 2026, on iPhone first. Join the waitlist to be notified.
+      <FAQItem question="What is Christ Note?">
+        Christ Note is an iPhone companion for the homily. Record live during Mass, paste a parish livestream link, or photograph your notes — an AI summary surfaces scripture references, themes, and key quotes. Past sermons live in a personal library, sorted by week and season.
       </FAQItem>
-      <FAQItem question="Is it free?">
+      <FAQItem question="How does Christ Note protect my privacy?">
+        Recordings are encrypted in transit and at rest. Audio is processed for transcription and immediately discarded — only the text remains. We never sell or share your data, and your library is yours alone.
+      </FAQItem>
+      <FAQItem question="Can I use Christ Note offline?">
+        Recording works offline — Christ Note captures audio on-device whether you have signal or not. Transcription and AI summaries need a connection, but they sync automatically the next time you're online.
+      </FAQItem>
+      <FAQItem question="Is Christ Note free?">
         A free tier covers a few sermons per month. A premium tier unlocks unlimited recordings, deeper AI summaries, and unlimited library storage.
       </FAQItem>
-      <FAQItem question="What about my privacy?">
-        Recordings are encrypted in transit and at rest. Audio is processed for transcription and immediately discarded — only the text remains. We never share data.
-      </FAQItem>
-      <FAQItem question="Can I record without permission?">
-        Christ Note is for personal use. Always check with your parish before recording publicly.
-      </FAQItem>
-      <FAQItem question="Is this only for Catholics?">
-        It's built for Catholic Mass first — scripture references default to USCCB lectionary readings — but anyone can use it for any sermon, talk, or lecture.
+      <FAQItem question="Is there an Android app?">
+        Not yet. Christ Note ships on iPhone first, Spring 2026. Android is on the roadmap — join the waitlist and we'll write when it's ready.
       </FAQItem>
     </div>
   </div>
@@ -43,6 +44,15 @@ import FAQItem from './FAQItem.astro';
   font-family: var(--font-display);
   font-size: var(--fs-display-3);
   font-weight: 500;
+  margin-bottom: var(--s-3);
+}
+.faq-lede {
+  font-family: "Cormorant Garamond", Georgia, serif;
+  font-style: italic;
+  font-size: var(--fs-body-lg);
+  color: var(--ink-600);
+  max-width: 52ch;
+  margin: 0 auto;
 }
 .faq-list {
   max-width: 760px;
