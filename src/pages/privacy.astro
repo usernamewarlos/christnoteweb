@@ -9,24 +9,19 @@ export const prerender = true;
 const lastUpdated = '7 May 2026';
 
 const sections = [
-  { id: 'collect', title: 'Personal information we collect' },
-  { id: 'use', title: 'How we use your information' },
-  { id: 'disclosure', title: 'Disclosure to third parties' },
-  { id: 'subprocessors', title: 'Sub-processors' },
-  { id: 'choices', title: 'Your choices and rights' },
-  { id: 'retention', title: 'How long we retain it' },
-  { id: 'security', title: 'How we secure it' },
-  { id: 'children', title: "Children's privacy" },
-  { id: 'california', title: 'California privacy rights (CCPA)' },
-  { id: 'eea-uk', title: 'EEA, Switzerland, and UK rights (GDPR)' },
-  { id: 'transfers', title: 'International transfers' },
-  { id: 'changes', title: 'Changes to this policy' },
-  { id: 'contact', title: 'Contact' },
+  { id: 'collect', title: 'What we collect' },
+  { id: 'use', title: 'How we use it' },
+  { id: 'share', title: 'Who we share it with' },
+  { id: 'choices', title: 'Your choices' },
+  { id: 'security', title: 'Security and retention' },
+  { id: 'children', title: "Children" },
+  { id: 'rights', title: 'Your privacy rights' },
+  { id: 'contact', title: 'Changes and contact' },
 ];
 ---
 <Layout
   title="Privacy Policy — Christ Note"
-  description="How Christ Note collects, uses, discloses, and protects your information."
+  description="How Christ Note collects, uses, and protects your information."
 >
   <Nav />
 
@@ -41,11 +36,11 @@ const sections = [
 
       <article class="prose">
         <p class="lede">
-          Christ Note is built around scripture and silence — the same applies to your data. This page explains, in plain language, what we collect, how we use it, who we share it with, and the choices you have.
+          Christ Note is built around scripture and silence — the same applies to your data. This page explains, in plain language, what we collect and the choices you have.
         </p>
 
         <p>
-          <strong>SixFortyLabs LLC</strong>, a Texas limited liability company ("Christ Note," "we," "us," or "our"), provides the Christ Note iPhone application and the christnote.app website (together, the "Services"). This Privacy Policy applies when you use the Services as a consumer. By using the Services, you agree to the collection, use, and disclosure of your information as described below.
+          <strong>SixFortyLabs LLC</strong>, a Texas limited liability company ("Christ Note," "we," "us"), provides the Christ Note iPhone application and the christnote.app website (together, the "Services"). By using the Services, you agree to the collection, use, and disclosure of your information described below.
         </p>
 
         <nav class="toc" aria-label="Sections">
@@ -57,163 +52,86 @@ const sections = [
           </ol>
         </nav>
 
-        <!-- ============== 1 ============== -->
-        <h2 id="collect"><span class="num">01</span>Personal information we collect</h2>
-
-        <h3>Information you provide</h3>
+        <!-- 1 -->
+        <h2 id="collect"><span class="num">01</span>What we collect</h2>
         <ul>
-          <li><strong>Account.</strong> When you create an account or sign in via <strong>Apple Sign-In</strong> or <strong>Google Sign-In</strong>, we receive your email address and basic profile fields (e.g. name) returned by the identity provider. Authentication is handled by <strong>Firebase Authentication</strong>.</li>
-          <li><strong>Sermon and study content.</strong> When you record a homily, paste a YouTube link, photograph notes, or generate AI summaries, flashcards, quizzes, chats, or Bible study notes, we collect the resulting content. This includes <strong>audio recordings</strong>, <strong>transcripts</strong>, <strong>summaries</strong>, <strong>notes and highlights</strong>, and <strong>chat messages</strong> tied to your account.</li>
-          <li><strong>Payment information.</strong> If you purchase Christ Note Pro, the transaction is processed by the <strong>Apple App Store</strong> and tracked by <strong>RevenueCat</strong>. We do not receive or store your payment card details.</li>
-          <li><strong>Communications.</strong> If you contact support, we keep the message and any information you choose to include.</li>
+          <li><strong>Account.</strong> Email and basic profile from <strong>Apple Sign-In</strong> or <strong>Google Sign-In</strong>, via <strong>Firebase Authentication</strong>.</li>
+          <li><strong>Sermons and study content.</strong> Audio recordings, transcripts, AI summaries, flashcards, quizzes, chat messages, and Bible notes you create. Stored in private, encrypted Firebase storage tied to your account.</li>
+          <li><strong>Subscriptions.</strong> If you buy <strong>Christ Note Pro</strong>, the <strong>Apple App Store</strong> processes payment and <strong>RevenueCat</strong> tracks entitlement. We never see your card details.</li>
+          <li><strong>Device and diagnostics.</strong> App version, iOS version, language, and crash logs.</li>
+          <li><strong>Usage.</strong> Server-side counters of AI calls, used to enforce free-tier limits.</li>
+          <li><strong>Install attribution.</strong> <strong>AppsFlyer</strong> with Apple's <strong>SKAdNetwork 4.0</strong> — anonymous, aggregate, no user-level tracking. If you decline App Tracking Transparency (ATT), no <strong>IDFA</strong> is shared.</li>
         </ul>
 
-        <h3>Information collected automatically</h3>
-        <ul>
-          <li><strong>Device data.</strong> iOS version, app version, device model, language, and time zone.</li>
-          <li><strong>Diagnostics.</strong> Crash logs and performance traces, used to keep the app working.</li>
-          <li><strong>Usage data.</strong> Server-side counters of AI operations (per operation, per user, per day or per lifetime) used to enforce free-tier and abuse limits.</li>
-        </ul>
-
-        <h3>Information from third parties</h3>
-        <ul>
-          <li><strong>Identity providers.</strong> Apple and Google return the basic profile information you authorized.</li>
-          <li><strong>Subscription provider.</strong> RevenueCat returns purchase and entitlement state for Christ Note Pro.</li>
-          <li><strong>Attribution.</strong> Apple's <strong>SKAdNetwork 4.0</strong> sends anonymous, aggregated postbacks to our measurement partner <strong>AppsFlyer</strong> when you install Christ Note from a paid ad. No user-level identifier is shared with advertisers.</li>
-        </ul>
-
-        <!-- ============== 2 ============== -->
-        <h2 id="use"><span class="num">02</span>How we use your information</h2>
-        <p>We use the information described above to:</p>
-        <ul>
-          <li>Provide and operate the Services — sign-in, recording, transcription, AI summaries, Bible study tools, daily devotional, and library sync.</li>
-          <li>Enforce free-tier and abuse limits (server-side quota counters).</li>
-          <li>Process subscriptions and entitlement changes through RevenueCat.</li>
-          <li>Diagnose crashes and improve performance.</li>
-          <li>Measure the effectiveness of paid ad campaigns through Apple's privacy-preserving SKAdNetwork framework.</li>
-          <li>Communicate with you about your account, security, and changes to the Services.</li>
-          <li>Comply with legal obligations and enforce our Terms of Use.</li>
-        </ul>
+        <!-- 2 -->
+        <h2 id="use"><span class="num">02</span>How we use it</h2>
         <p>
-          <strong>Transcription happens on your device</strong> using <strong>WhisperKit</strong> (an Apple-CoreML port of OpenAI Whisper). Audio files are <strong>not</strong> sent off-device for transcription; only the resulting text is sent when you ask for an AI summary or other AI feature.
+          We use the information above to operate the Services, enforce free-tier and abuse limits, process subscriptions, diagnose crashes, measure ad performance through Apple's privacy-preserving SKAdNetwork framework, communicate about your account, and comply with law.
         </p>
         <p>
-          <strong>We do not use your sermon content, transcripts, notes, or chat messages to train AI models</strong> — neither our own nor those of our sub-processors. OpenAI processes API requests under terms that exclude training by default.
+          <strong>Transcription happens on your iPhone</strong> using <strong>WhisperKit</strong>. Audio is not sent off-device for transcription; only the resulting text is sent when you ask for an AI feature. <strong>We do not use your sermon content, transcripts, notes, or chat messages to train AI models</strong> — neither our own nor those of our sub-processors.
         </p>
 
-        <!-- ============== 3 ============== -->
-        <h2 id="disclosure"><span class="num">03</span>Disclosure to third parties</h2>
-        <p>We share information only with the categories of recipients listed below:</p>
-        <ul>
-          <li><strong>Service providers and sub-processors</strong> who help us deliver the Services (see Section 4).</li>
-          <li><strong>Legal and regulatory authorities</strong> when required by law, valid legal process, or to protect rights, property, or safety.</li>
-          <li><strong>Successor entities</strong> in the event of a merger, acquisition, financing, or sale of assets, subject to standard confidentiality obligations.</li>
-          <li><strong>With your consent</strong>, where you have explicitly directed us to share information.</li>
-        </ul>
-        <p><strong>We do not sell or rent your personal information.</strong> We do not share your sermons, recordings, transcripts, notes, or chat content with advertisers.</p>
-
-        <!-- ============== 4 ============== -->
-        <h2 id="subprocessors"><span class="num">04</span>Sub-processors</h2>
-        <p>The following providers process information on our behalf:</p>
+        <!-- 3 -->
+        <h2 id="share"><span class="num">03</span>Who we share it with</h2>
+        <p><strong>We do not sell or rent your data.</strong> We do not share your sermons, recordings, transcripts, notes, or chat content with advertisers. The sub-processors below help us deliver the Services:</p>
 
         <div class="prose-table">
           <table>
             <thead>
-              <tr><th>Service</th><th>Purpose</th><th>Data processed</th></tr>
+              <tr><th>Service</th><th>Purpose</th></tr>
             </thead>
             <tbody>
-              <tr><td>Firebase Authentication (Google)</td><td>Sign-in and session management</td><td>Email, OAuth identifiers</td></tr>
-              <tr><td>Cloud Firestore (Google)</td><td>Library storage — notes, transcripts, messages</td><td>Your library content</td></tr>
-              <tr><td>Firebase Storage (Google)</td><td>Audio recording storage</td><td>Sermon audio binaries</td></tr>
-              <tr><td>Firebase Cloud Functions (Google)</td><td>AI orchestration</td><td>Transcript and prompt text</td></tr>
-              <tr><td>OpenAI</td><td>AI summaries, chat, flashcards, quizzes, Bible analysis</td><td>Transcript and prompt text</td></tr>
-              <tr><td>RevenueCat</td><td>Subscription management</td><td>Purchase and entitlement records</td></tr>
-              <tr><td>Superwall</td><td>Paywall presentation and experiments</td><td>Anonymous experiment events</td></tr>
-              <tr><td>AppsFlyer</td><td>Install attribution measurement</td><td>SKAdNetwork postbacks (anonymous)</td></tr>
-              <tr><td>Apple SKAdNetwork 4.0</td><td>Privacy-preserving ad attribution</td><td>Aggregated conversion values</td></tr>
-              <tr><td>Apple App Store</td><td>Distribution and payments</td><td>Purchase records (Apple)</td></tr>
+              <tr><td>Firebase (Google)</td><td>Sign-in, Firestore library storage, audio storage, AI orchestration</td></tr>
+              <tr><td>OpenAI</td><td>AI summaries, chat, flashcards, quizzes, Bible analysis</td></tr>
+              <tr><td>RevenueCat</td><td>Subscription management</td></tr>
+              <tr><td>Superwall</td><td>Paywall presentation</td></tr>
+              <tr><td>AppsFlyer + Apple SKAdNetwork 4.0</td><td>Anonymous install attribution</td></tr>
+              <tr><td>Apple App Store</td><td>Distribution and payments</td></tr>
             </tbody>
           </table>
         </div>
 
-        <p>Each sub-processor is bound by contract and applicable data-protection law to use the information only for the purposes listed above.</p>
+        <p>We may also disclose information to legal authorities when required by law, valid legal process, or to protect rights and safety, and to a successor entity in the event of a merger, acquisition, or sale of assets.</p>
 
-        <!-- ============== 5 ============== -->
-        <h2 id="choices"><span class="num">05</span>Your choices and rights</h2>
+        <!-- 4 -->
+        <h2 id="choices"><span class="num">04</span>Your choices</h2>
         <ul>
-          <li><strong>App Tracking Transparency (ATT).</strong> When you first launch Christ Note, iOS will ask whether you allow tracking. You can decline; the app works fully either way. Declining means we use only Apple's SKAdNetwork (no <strong>IDFA</strong>).</li>
-          <li><strong>Sign out.</strong> You can sign out of the app at any time from Settings.</li>
-          <li><strong>Account deletion.</strong> To delete your account and associated content, email <a href="mailto:hello@christnote.app">hello@christnote.app</a>. We will process the request within 30 days.</li>
-          <li><strong>Data export.</strong> Email <a href="mailto:hello@christnote.app">hello@christnote.app</a> for a portable copy of your library content.</li>
-          <li><strong>Promotional email.</strong> You may opt out of promotional email at any time using the unsubscribe link. You will continue to receive operational and transactional messages (e.g. receipts, security alerts).</li>
+          <li><strong>App Tracking Transparency.</strong> Decline at first launch and we use only Apple's SKAdNetwork (no IDFA).</li>
+          <li><strong>Sign out</strong> from Settings in the app at any time.</li>
+          <li><strong>Delete or export your data.</strong> Email <a href="mailto:hello@christnote.app">hello@christnote.app</a> — we process requests within 30 days.</li>
+          <li><strong>Promotional email.</strong> Unsubscribe via the link in any marketing email; you'll still receive operational and transactional messages (receipts, security alerts).</li>
         </ul>
 
-        <!-- ============== 6 ============== -->
-        <h2 id="retention"><span class="num">06</span>How long we retain it</h2>
-        <p>We retain personal information only as long as necessary to provide the Services and comply with our legal obligations.</p>
-        <ul>
-          <li><strong>Account data.</strong> Retained while your account is active. Deleted within 30 days of account deletion, except for fields we are required to keep for legal, accounting, or fraud-prevention reasons.</li>
-          <li><strong>Library content.</strong> Retained while your account is active. Deleted on account deletion request.</li>
-          <li><strong>Diagnostics.</strong> Retained for up to 90 days.</li>
-          <li><strong>Subscription records.</strong> Retained as required by tax and accounting law (typically 7 years).</li>
-          <li><strong>SKAdNetwork conversion data.</strong> Retained in aggregate form per Apple's framework defaults.</li>
-        </ul>
-
-        <!-- ============== 7 ============== -->
-        <h2 id="security"><span class="num">07</span>How we secure it</h2>
+        <!-- 5 -->
+        <h2 id="security"><span class="num">05</span>Security and retention</h2>
         <p>
-          We use industry-standard safeguards: HTTPS/TLS in transit, encryption at rest in Firebase, server-side Firestore security rules that deny access to anyone other than the signed-in owner, and least-privilege access controls for the small team that operates the Services. No system is perfectly secure; we cannot guarantee that information will not be accessed, disclosed, altered, or destroyed by breach of any of our physical, technical, or managerial safeguards.
-        </p>
-
-        <!-- ============== 8 ============== -->
-        <h2 id="children"><span class="num">08</span>Children's privacy</h2>
-        <p>
-          The Services are not directed to children under 13 (or under 16 in the EEA and UK), and we do not knowingly collect personal information from children. If you believe a child has provided us personal information, contact <a href="mailto:hello@christnote.app">hello@christnote.app</a> and we will delete it.
-        </p>
-
-        <!-- ============== 9 ============== -->
-        <h2 id="california"><span class="num">09</span>California privacy rights (CCPA)</h2>
-        <p>If you are a California resident, the California Consumer Privacy Act (as amended by the CPRA) gives you the following rights regarding the personal information we collect about you:</p>
-        <ul>
-          <li><strong>Right to know.</strong> Request the categories and specific pieces of personal information we have collected about you.</li>
-          <li><strong>Right to correct.</strong> Request that we correct inaccurate personal information.</li>
-          <li><strong>Right to delete.</strong> Request that we delete personal information we have collected about you, subject to exceptions.</li>
-          <li><strong>Right to opt out.</strong> We do not sell or share personal information for cross-context behavioral advertising. There is no opt-out to exercise.</li>
-          <li><strong>Right to non-discrimination.</strong> We will not discriminate against you for exercising any of these rights.</li>
-        </ul>
-        <p>To exercise these rights, email <a href="mailto:hello@christnote.app">hello@christnote.app</a> with the subject "California Privacy Request." We may need to verify your identity before responding.</p>
-
-        <!-- ============== 10 ============== -->
-        <h2 id="eea-uk"><span class="num">10</span>EEA, Switzerland, and UK rights (GDPR)</h2>
-        <p>If you are located in the European Economic Area, Switzerland, or the United Kingdom, the GDPR (or its UK equivalent) gives you the following rights:</p>
-        <ul>
-          <li>Access, correct, or erase your personal data;</li>
-          <li>Restrict or object to certain processing;</li>
-          <li>Receive a portable copy of your data;</li>
-          <li>Withdraw consent where processing is based on consent;</li>
-          <li>Lodge a complaint with your local data protection authority.</li>
-        </ul>
-        <p>
-          The legal bases on which we process personal data are: <strong>contractual necessity</strong> (operating your account and the Services), <strong>legitimate interests</strong> (security, abuse prevention, performance measurement), <strong>consent</strong> (where required, e.g. ATT), and <strong>legal obligation</strong>.
+          We use HTTPS/TLS in transit, encryption at rest, and Firestore security rules that lock content to your signed-in account. No system is perfectly secure; we cannot guarantee data will never be accessed, disclosed, or destroyed by a security incident.
         </p>
         <p>
-          The data controller is <strong>SixFortyLabs LLC</strong>. To exercise your rights, email <a href="mailto:hello@christnote.app">hello@christnote.app</a>.
+          We retain personal information while your account is active and delete it within 30 days of a deletion request, except where we are required to keep records for legal, accounting, or tax reasons (typically up to 7 years for subscription billing). Diagnostics are retained up to 90 days.
         </p>
 
-        <!-- ============== 11 ============== -->
-        <h2 id="transfers"><span class="num">11</span>International transfers</h2>
+        <!-- 6 -->
+        <h2 id="children"><span class="num">06</span>Children</h2>
         <p>
-          The Services are operated in the United States. Data is processed in <strong>us-central1</strong> (Firebase Cloud Functions region) and may be processed by sub-processors in the United States and elsewhere. Where required, transfers from the EEA, UK, or Switzerland are governed by the European Commission's Standard Contractual Clauses or equivalent legal mechanisms.
+          The Services are not directed to children under 13 (or under 16 in the EEA and UK), and we do not knowingly collect personal information from children. If you believe a child has given us information, contact <a href="mailto:hello@christnote.app">hello@christnote.app</a> and we'll delete it.
         </p>
 
-        <!-- ============== 12 ============== -->
-        <h2 id="changes"><span class="num">12</span>Changes to this policy</h2>
+        <!-- 7 -->
+        <h2 id="rights"><span class="num">07</span>Your privacy rights</h2>
+        <p>
+          If you live in California, the EEA, Switzerland, or the UK, you have the right to <strong>access, correct, delete, port, and restrict</strong> use of your personal information under the California Consumer Privacy Act (CCPA), the GDPR, or your local law. To exercise any of these, email <a href="mailto:hello@christnote.app">hello@christnote.app</a>. We may need to verify your identity before responding. We will not discriminate against you for exercising these rights.
+        </p>
+        <p>
+          We process personal information under contractual necessity (operating your account), legitimate interests (security, abuse prevention, performance measurement), consent (where required, e.g. ATT), and legal obligation. Christ Note is operated in the United States; data may be processed in the US and elsewhere by our sub-processors. Where required, transfers from the EEA, UK, or Switzerland are governed by the European Commission's Standard Contractual Clauses or equivalent legal mechanisms.
+        </p>
+
+        <!-- 8 -->
+        <h2 id="contact"><span class="num">08</span>Changes and contact</h2>
         <p>
           We may update this Privacy Policy from time to time. The "Last updated" date at the top reflects the most recent revision. Material changes will be highlighted in-app or by email before they take effect.
         </p>
-
-        <!-- ============== 13 ============== -->
-        <h2 id="contact"><span class="num">13</span>Contact</h2>
         <p>
           Questions, corrections, or rights requests:<br />
           <strong>SixFortyLabs LLC</strong><br />
