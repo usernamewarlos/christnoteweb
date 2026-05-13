@@ -1,5 +1,4 @@
 ---
-import PhoneFrame from './PhoneFrame.astro';
 import WaitlistForm from './WaitlistForm.astro';
 ---
 <section class="hero" id="top">
@@ -13,9 +12,12 @@ import WaitlistForm from './WaitlistForm.astro';
     <WaitlistForm id="hero" />
 
     <div class="hero-phone">
-      <PhoneFrame
+      <img
         src="/screens/library.png"
         alt="Christ Note Library — recent sermons"
+        loading="lazy"
+        decoding="async"
+        class="hero-phone-img"
       />
     </div>
   </div>
@@ -59,6 +61,11 @@ import WaitlistForm from './WaitlistForm.astro';
   justify-content: center;
   margin-top: var(--s-16);
   animation: float 6s var(--ease-out) infinite;
+}
+.hero-phone-img {
+  width: 280px;
+  height: auto;
+  display: block;
 }
 @keyframes float {
   0%, 100% { transform: translateY(-6px); }
