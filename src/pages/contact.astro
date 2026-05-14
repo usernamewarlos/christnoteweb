@@ -8,34 +8,27 @@ export const prerender = true;
 ---
 <Layout
   title="Contact — Christ Note"
-  description="Get in touch with Christ Note — questions, feedback, press."
+  description="Get in touch with Christ Note customer support."
 >
   <Nav />
 
-  <main class="prose-page">
+  <main class="contact-page">
     <div class="container">
-      <header class="prose-head">
-        <a class="back-link" href="/">← Back home</a>
-        <span class="eyebrow">Contact</span>
-        <h1>Get in touch</h1>
-      </header>
+      <a class="back-link" href="/">← Back home</a>
 
-      <article class="prose">
-        <p class="lede">
-          Questions, feedback, press, or something we missed — write to us. We read every message and reply from a real person.
-        </p>
+      <h1 class="contact-title">Customer support</h1>
 
-        <section class="contact-card">
-          <span class="contact-label">Email</span>
-          <a class="contact-email" href="mailto:support@christnote.app">support@christnote.app</a>
-          <p class="contact-note">Most replies land within two business days.</p>
-        </section>
+      <p class="contact-body">
+        At Christ Note, we're here to support you every step of the way. If you have any questions, concerns, or need assistance with the app, we're just an email away.
+      </p>
 
-        <p class="contact-entity">
-          <strong>SixFortyLabs LLC</strong><br />
-          Texas, USA
-        </p>
-      </article>
+      <p class="contact-email-line">
+        Email us at <a href="mailto:support@christnote.app">support@christnote.app</a>
+      </p>
+
+      <p class="contact-response">
+        Our customer support team will do their best to get back to you within 48 hours.
+      </p>
     </div>
   </main>
 
@@ -43,47 +36,58 @@ export const prerender = true;
 </Layout>
 
 <style>
-.contact-card {
-  margin: var(--s-10) 0 var(--s-8);
-  padding: var(--s-8) var(--s-8);
-  border-radius: 16px;
-  background: var(--parchment-100);
-  border: 1px solid var(--divider, rgba(0,0,0,0.08));
+.contact-page {
+  padding: var(--s-16) 0 var(--s-20);
+  background: var(--parchment-50);
   text-align: center;
 }
-.contact-label {
-  display: block;
-  font-family: var(--font-ui);
-  font-size: 12px;
-  font-weight: 600;
-  letter-spacing: var(--tracking-eyebrow);
-  text-transform: uppercase;
-  color: var(--brass-600);
-  margin-bottom: var(--s-3);
-}
-.contact-email {
+.back-link {
   display: inline-block;
-  font-family: var(--font-display);
-  font-size: clamp(22px, 2.2vw, 28px);
-  font-weight: 500;
-  color: var(--ink-900);
-  text-decoration: none;
-  border-bottom: 1px solid var(--brass-400);
-  padding-bottom: 4px;
-  transition: color var(--dur-fast) var(--ease-out);
-}
-.contact-email:hover { color: var(--brass-600); }
-.contact-note {
-  font-family: var(--font-ui);
-  font-size: 13px;
-  color: var(--ink-500);
-  margin: var(--s-4) 0 0;
-}
-.contact-entity {
   font-family: var(--font-ui);
   font-size: 14px;
-  color: var(--ink-600);
-  line-height: 1.6;
-  margin-top: var(--s-10);
+  color: var(--ink-500);
+  text-decoration: none;
+  margin-bottom: var(--s-10);
+}
+.back-link:hover { color: var(--brass-600); }
+.contact-title {
+  font-family: var(--font-display);
+  font-size: clamp(32px, 4vw, 44px);
+  font-weight: 500;
+  color: var(--ink-900);
+  letter-spacing: var(--tracking-tight);
+  margin: 0 0 var(--s-8);
+}
+.contact-body {
+  font-family: "Cormorant Garamond", Georgia, serif;
+  font-style: italic;
+  font-size: clamp(18px, 1.6vw, 21px);
+  color: var(--ink-700);
+  line-height: 1.55;
+  max-width: 52ch;
+  margin: 0 auto var(--s-10);
+}
+.contact-email-line {
+  font-family: var(--font-ui);
+  font-size: clamp(16px, 1.4vw, 18px);
+  color: var(--ink-800);
+  margin: 0 0 var(--s-4);
+}
+.contact-email-line a {
+  color: var(--brass-600);
+  font-weight: 600;
+  text-decoration: none;
+  border-bottom: 1px solid var(--brass-400);
+  padding-bottom: 2px;
+}
+.contact-email-line a:hover {
+  color: var(--brass-700);
+}
+.contact-response {
+  font-family: var(--font-ui);
+  font-size: 14px;
+  color: var(--ink-500);
+  max-width: 48ch;
+  margin: 0 auto;
 }
 </style>
