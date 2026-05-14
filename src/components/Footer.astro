@@ -4,6 +4,15 @@ const year = new Date().getFullYear();
 ---
 <footer class="site-footer">
   <div class="container">
+    <div class="footer-contact">
+      <span class="contact-eyebrow">Got a question?</span>
+      <h3 class="contact-heading">Reach out — we read every note.</h3>
+      <a class="contact-cta" href="mailto:support@christnote.app">
+        <span>Contact us</span>
+        <svg width="14" height="14" aria-hidden="true"><use href="#icon-arrow-right" /></svg>
+      </a>
+    </div>
+
     <div class="footer-grid">
       <div class="footer-brand">
         <a class="brand-mark" href="#top">
@@ -29,7 +38,7 @@ const year = new Date().getFullYear();
       <div class="footer-col">
         <h4>Contact</h4>
         <ul>
-          <li><a class="footer-link" href="mailto:hello@christnote.app">hello@christnote.app</a></li>
+          <li><a class="footer-link" href="mailto:support@christnote.app">support@christnote.app</a></li>
           <li><a class="footer-link" href="/press">Press</a></li>
         </ul>
       </div>
@@ -47,6 +56,55 @@ const year = new Date().getFullYear();
   color: var(--parchment-200);
   padding: var(--s-20) 0 var(--s-8);
 }
+.footer-contact {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  gap: var(--s-3);
+  padding-bottom: var(--s-12);
+  margin-bottom: var(--s-14);
+  border-bottom: 1px solid rgba(255,255,255,0.06);
+}
+.contact-eyebrow {
+  font-family: var(--font-ui);
+  font-size: 12px;
+  font-weight: 600;
+  letter-spacing: var(--tracking-eyebrow);
+  text-transform: uppercase;
+  color: var(--brass-400);
+}
+.contact-heading {
+  font-family: var(--font-display);
+  font-size: clamp(24px, 2.4vw, 30px);
+  font-weight: 500;
+  font-style: italic;
+  color: var(--parchment-50);
+  letter-spacing: var(--tracking-display);
+  margin: 0;
+  max-width: 30ch;
+  line-height: var(--lh-tight);
+}
+.contact-cta {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--s-2);
+  padding: 12px 22px;
+  border-radius: 999px;
+  background: var(--brass-400);
+  color: var(--ink-900);
+  font-family: var(--font-ui);
+  font-size: 14px;
+  font-weight: 600;
+  text-decoration: none;
+  margin-top: var(--s-3);
+  transition: background var(--dur-fast) var(--ease-out), transform var(--dur-fast) var(--ease-out);
+}
+.contact-cta:hover {
+  background: var(--brass-300);
+  transform: translateY(-1px);
+}
+.contact-cta svg { color: var(--ink-900); }
 .footer-grid {
   display: grid;
   grid-template-columns: 1.4fr 1fr 1fr 1fr;
